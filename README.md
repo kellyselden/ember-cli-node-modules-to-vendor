@@ -1,27 +1,53 @@
-# Ember-cli-node-modules-to-vendor
+# ember-cli-node-modules-to-vendor
 
-This README outlines the details of collaborating on this Ember addon.
+[![npm version](https://badge.fury.io/js/ember-cli-node-modules-to-vendor.svg)](https://badge.fury.io/js/ember-cli-node-modules-to-vendor)
+[![Build Status](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor.svg?branch=master)](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor)
+
+Easy way to import packages from `node_modules` (you can import from any folder if you want to)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-node-modules-to-vendor`
-* `npm install`
-* `bower install`
+`ember install ember-cli-node-modules-to-vendor`
 
-## Running
+## Usage
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+```js
+// ember-cli-build.js
 
-## Running Tests
+// ...
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+var app = new EmberApp(defaults, {
+  nodeModulesToVendor: [
+    'node_modules/some-package/dist/js'
+  ]
+});
 
-## Building
+// then you can easily do
+app.import('vendor/a-file-from-the-folder-above.js', {
+    using: [{ transformation: 'amd', as: 'some-package' }]
+});
 
-* `ember build`
+// ...
+```
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+## Advanced Usage
+
+You can supply a tree if you want finer control:
+
+```js
+// ember-cli-build.js
+
+var Funnel = require('broccoli-funnel');
+
+// ...
+
+var app = new EmberApp(defaults, {
+  nodeModulesToVendor: [
+    new Funnel('node_modules/some-package/dist/js', {
+      files: ['only-this-file.js']
+    })
+  ]
+});
+
+// ...
+```
