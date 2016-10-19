@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/ember-cli-node-modules-to-vendor.svg)](https://badge.fury.io/js/ember-cli-node-modules-to-vendor)
 [![Build Status](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor.svg?branch=master)](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor)
 
-Easy way to import packages from `node_modules` (you can import from any folder if you want to)
+Easily import packages (non ember addons) from `node_modules` (you can import from any folder if you want to)
 
 ## Installation
 
