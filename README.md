@@ -24,7 +24,7 @@ var app = new EmberApp(defaults, {
 
 // then you can easily do
 app.import('vendor/a-file-from-the-folder-above.js', {
-    using: [{ transformation: 'amd', as: 'some-package' }]
+  using: [{ transformation: 'amd', as: 'some-package' }]
 });
 
 // ...
@@ -48,6 +48,35 @@ var app = new EmberApp(defaults, {
     })
   ]
 });
+
+// ...
+```
+
+You can conditionally import, for say, FastBoot support
+
+```js
+// ember-cli-build.js
+
+// ...
+
+function isFastBoot() {
+  return process.env.EMBER_CLI_FASTBOOT === 'true';
+}
+
+// ...
+
+var nodeModulesToVendor;
+if (!isFastBoot()) {
+  nodeModulesToVendor.push('node_modules/location-origin/dist');
+}
+
+var app = new EmberApp(defaults, {
+  nodeModulesToVendor: nodeModulesToVendor
+});
+
+if (!isFastBoot()) {
+  app.import('vendor/a-file-from-the-folder-above.js');
+}
 
 // ...
 ```
