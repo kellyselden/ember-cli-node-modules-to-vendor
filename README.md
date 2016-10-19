@@ -23,9 +23,7 @@ var app = new EmberApp(defaults, {
 });
 
 // then you can easily do
-app.import('vendor/a-file-from-the-folder-above.js', {
-  using: [{ transformation: 'amd', as: 'some-package' }]
-});
+app.import('vendor/a-file-from-the-folder-above.js');
 
 // ...
 ```
