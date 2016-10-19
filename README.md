@@ -63,7 +63,7 @@ function isFastBoot() {
 
 // ...
 
-var nodeModulesToVendor;
+var nodeModulesToVendor = [];
 if (!isFastBoot()) {
   nodeModulesToVendor.push('node_modules/location-origin/dist');
 }
