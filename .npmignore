@@ -1,6 +1,7 @@
 /bower_components
 /config/ember-try.js
 /dist
+/test
 /tests
 /tmp
 **/.gitkeep
