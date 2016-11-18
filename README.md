@@ -51,8 +51,8 @@ var app = new EmberApp(defaults, {
 app.import('vendor/some-package/only-this-file.js');
 ```
 
-_Note: omitting the `destDir` options, will place the file directly into the `vendor`
-folder, so `app.import('vendor/only-this-file.js')` would be your import._
+_Note: omitting the `destDir` option, will place the file directly into the `vendor`
+folder, so `app.import('vendor/only-this-file.js')` would be your import instead._
 
 You can conditionally import, for say, FastBoot support
 
