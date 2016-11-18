@@ -42,13 +42,17 @@ var Funnel = require('broccoli-funnel');
 var app = new EmberApp(defaults, {
   nodeModulesToVendor: [
     new Funnel('node_modules/some-package/dist/js', {
+      destDir: 'some-package',
       files: ['only-this-file.js']
     })
   ]
 });
 
-// ...
+app.import('vendor/some-package/only-this-file.js');
 ```
+
+_Note: omitting the `destDir` options, will place the file directly into the `vendor`
+folder, so `app.import('vendor/only-this-file.js')` would be your import._
 
 You can conditionally import, for say, FastBoot support
 
