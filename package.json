@@ -15,7 +15,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test && mocha"
+    "test": "ember test",
+    "mocha": "mocha"
   },
   "dependencies": {
     "broccoli-merge-trees": "^1.0.0",
