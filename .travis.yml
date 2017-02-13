@@ -10,6 +10,10 @@ cache:
     - $HOME/.npm
     - $HOME/.cache # includes bowers cache
 
+env:
+  - NPM_RUN_MOCHA=true
+  - NPM_RUN_MOCHA=false
+
 before_install:
   - npm config set spin false
   - npm install -g bower
@@ -20,3 +24,7 @@ before_install:
 install:
   - npm install
   - bower install
+
+script:
+  - test "$NPM_RUN_MOCHA" != true || npm run mocha
+  - test "$NPM_RUN_MOCHA" = true || npm test
