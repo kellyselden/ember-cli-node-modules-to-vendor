@@ -12,7 +12,7 @@ cache:
 
 env:
   - NPM_RUN_MOCHA=true
-  - NPM_RUN_MOCHA=false
+  - NPM_TEST=true
 
 before_install:
   - npm config set spin false
@@ -26,4 +26,4 @@ install:
 
 script:
   - test "$NPM_RUN_MOCHA" != true || npm run mocha
-  - test "$NPM_RUN_MOCHA" = true || npm test
+  - test "$NPM_TEST" != true || npm test
