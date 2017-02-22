@@ -14,10 +14,12 @@ describe('Acceptance | ember-cli-build', function() {
     return app.create('dummy', {
       fixturesPath: 'tests'
     }).then(function() {
-      app.editPackageJSON(function(pkg) {
-        pkg['devDependencies']['broccoli-funnel'] = process.env.npm_package_devDependencies_broccoli_funnel;
-      });
-      return app.run('npm', 'install');
+      return app.run(
+        'npm',
+        'install',
+        '--save-dev',
+        `broccoli-funnel@${process.env.npm_package_devDependencies_broccoli_funnel}`
+      );
     }).then(function() {
       return app.startServer();
     });
