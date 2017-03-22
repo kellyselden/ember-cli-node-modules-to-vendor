@@ -1,18 +1,18 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
 
-var mergeTrees = require('broccoli-merge-trees');
+const mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-cli-node-modules-to-vendor',
 
-  included: function(app) {
+  included(app) {
     this.app = app;
   },
 
-  treeForVendor: function() {
-    var app = this.app;
-    var nodeModulesToVendor = app.options.nodeModulesToVendor || [];
+  treeForVendor() {
+    let app = this.app;
+    let nodeModulesToVendor = app.options.nodeModulesToVendor || [];
     return mergeTrees(nodeModulesToVendor);
   }
 };
