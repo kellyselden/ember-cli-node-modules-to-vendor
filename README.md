@@ -1,5 +1,6 @@
 # ember-cli-node-modules-to-vendor
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-cli-node-modules-to-vendor.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-cli-node-modules-to-vendor.svg)](https://badge.fury.io/js/ember-cli-node-modules-to-vendor)
 [![Build Status](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor.svg?branch=master)](https://travis-ci.org/kellyselden/ember-cli-node-modules-to-vendor)
 
