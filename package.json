@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-node-modules-to-vendor",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Easily import packages (non ember addons) from `node_modules`",
   "keywords": [
     "ember-addon"
