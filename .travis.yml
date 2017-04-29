@@ -8,7 +8,6 @@ sudo: false
 cache:
   directories:
     - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
 
 env:
   - NPM_RUN_MOCHA=true
@@ -16,13 +15,12 @@ env:
 
 before_install:
   - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
+  - npm install -g phantomjs-prebuilt
   - phantomjs --version
 
 install:
   - npm install
-  - bower install
+
 
 script:
   - test "$NPM_RUN_MOCHA" != true || npm run mocha
