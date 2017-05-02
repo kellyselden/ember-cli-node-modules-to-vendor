@@ -21,7 +21,6 @@ before_install:
 install:
   - npm install
 
-
 script:
   - test "$NPM_RUN_MOCHA" != true || npm run mocha
   - test "$NPM_TEST" != true || npm test
