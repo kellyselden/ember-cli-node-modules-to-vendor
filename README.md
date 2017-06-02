@@ -55,29 +55,29 @@ app.import('vendor/some-package/only-this-file.js');
 _Note: omitting the `destDir` option will place the file directly into the `vendor`
 folder, so `app.import('vendor/only-this-file.js')` would be your import instead._
 
-You can conditionally import, for say, FastBoot support
+You can conditionally import:
 
 ```js
 // ember-cli-build.js
 
 // ...
 
-function isFastBoot() {
-  return process.env.EMBER_CLI_FASTBOOT === 'true';
+function isDevelopment() {
+  return EmberApp.env !== 'production';
 }
 
 // ...
 
 var nodeModulesToVendor = [];
-if (!isFastBoot()) {
-  nodeModulesToVendor.push('node_modules/location-origin/dist');
+if (isDevelopment()) {
+  nodeModulesToVendor.push('node_modules/dev-helper/dist');
 }
 
 var app = new EmberApp(defaults, {
   nodeModulesToVendor: nodeModulesToVendor
 });
 
-if (!isFastBoot()) {
+if (isDevelopment()) {
   app.import('vendor/a-file-from-the-folder-above.js');
 }
 
