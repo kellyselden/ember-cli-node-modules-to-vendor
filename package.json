@@ -19,7 +19,8 @@
     "mocha": "cross-env DEBUG=ember-cli-addon-tests mocha"
   },
   "dependencies": {
-    "broccoli-merge-trees": "^2.0.0"
+    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-source": "^1.1.0"
   },
   "devDependencies": {
     "broccoli-funnel": "^1.0.0",

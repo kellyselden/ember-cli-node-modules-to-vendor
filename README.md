@@ -37,12 +37,13 @@ You can supply a tree if you want finer control:
 // ember-cli-build.js
 
 var Funnel = require('broccoli-funnel');
-
+var UnwatchedDir = require('broccoli-source').UnwatchedDir;
 // ...
 
 var app = new EmberApp(defaults, {
   nodeModulesToVendor: [
-    new Funnel('node_modules/some-package/dist/js', {
+    /* UnwatchedDir is optional, but it is rare to need a watcher assigned to a node_modules dependencies */
+    new Funnel(new UnwatchedDir('node_modules/some-package/dist/js'), {
       destDir: 'some-package',
       files: ['only-this-file.js']
     })
