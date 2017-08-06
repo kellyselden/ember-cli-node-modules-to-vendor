@@ -15,7 +15,7 @@ describe('Acceptance | ember-cli-build', function() {
 
     return app.create('dummy', {
       fixturesPath: 'tests',
-      skipInstall: true
+      skipNpm: true
     }).then(() => {
       app.editPackageJSON(pkg => {
         pkg.devDependencies['broccoli-funnel'] = process.env.npm_package_devDependencies_broccoli_funnel;
