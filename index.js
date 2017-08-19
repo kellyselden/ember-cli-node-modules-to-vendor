@@ -16,12 +16,14 @@ module.exports = {
     let app = this.app;
     let nodeModulesToVendor = app.options.nodeModulesToVendor || [];
 
-    return mergeTrees(nodeModulesToVendor.map(function(asset) {
+    let trees = nodeModulesToVendor.map(asset => {
       if (typeof asset === 'string') {
-        return new UnwatchedDir(asset);
+        asset = new UnwatchedDir(asset);
       }
 
       return asset;
-    }));
+    });
+
+    return mergeTrees(trees);
   }
 };
