@@ -23,7 +23,7 @@
     "broccoli-source": "^1.1.0"
   },
   "devDependencies": {
-    "broccoli-funnel": "^1.0.0",
+    "broccoli-funnel": "^2.0.0",
     "chai": "^4.0.0",
     "cross-env": "^5.0.0",
     "denodeify": "^1.2.1",
