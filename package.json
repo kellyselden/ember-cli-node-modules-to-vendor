@@ -37,7 +37,7 @@
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-shims": "^1.1.0",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~2.14.1",
+    "ember-source": "~2.15.0",
     "loader.js": "^4.2.3",
     "mocha": "^3.0.0",
     "request": "^2.0.0"
