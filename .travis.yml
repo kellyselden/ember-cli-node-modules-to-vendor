@@ -15,15 +15,7 @@ cache:
   directories:
     - $HOME/.npm
 
-env:
-  - NPM_RUN_MOCHA=true
-  - NPM_TEST=true
-
 before_install:
   - npm config set spin false
   - npm install -g npm@4
   - npm --version
-
-script:
-  - test "$NPM_RUN_MOCHA" != true || npm run mocha
-  - test "$NPM_TEST" != true || npm test
