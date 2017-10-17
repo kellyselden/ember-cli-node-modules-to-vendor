@@ -15,8 +15,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test",
-    "mocha": "cross-env DEBUG=ember-cli-addon-tests mocha"
+    "test": "cross-env DEBUG=ember-cli-addon-tests mocha"
   },
   "dependencies": {
     "broccoli-merge-trees": "^2.0.0",
