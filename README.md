@@ -6,6 +6,8 @@
 
 Easily import packages (non ember addons) from `node_modules` (you can import from any folder if you want to)
 
+**NOTE:** From **Ember CLI version 2.15**, packages from `node_modules` folder can be imported directly using `app.import` in `ember-cli-build.js` file . Refer [here](https://emberjs.com/blog/2017/09/01/ember-2-15-released.html#toc_app-import-files-within-node_modules) for release notes.
+
 ## Installation
 
 `ember install ember-cli-node-modules-to-vendor`
