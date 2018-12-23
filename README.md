@@ -64,7 +64,7 @@ You can conditionally import:
 // ...
 
 function isDevelopment() {
-  return EmberApp.env !== 'production';
+  return EmberApp.env() !== 'production';
 }
 
 // ...
